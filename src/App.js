@@ -2,6 +2,9 @@ import Header from './components/Header';
 import Tasks from './components/Tasks';
 import { useState } from 'react';
 import AddTask from './components/AddTask';
+import Counter from './state/Counter';
+import Form from './state/Form';
+import Todo from './state/Todo';
 
 function App() {
   const [tasks, setTasks] = useState([
@@ -35,13 +38,16 @@ function App() {
 
   return (
     <div className='container'>
-      <Header title='Task Tracker' />
+      {/* <Header title='Task Tracker' />
       <AddTask onAdd={addTask} />
       {tasks.length > 0 ? (
         <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} />
       ) : (
         'No Task To Show.'
-      )}
+      )} */}
+      <Counter />
+      <Form />
+      <Todo />
     </div>
   );
 }
