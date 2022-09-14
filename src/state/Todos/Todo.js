@@ -1,35 +1,34 @@
 import { useState } from 'react';
+import TodoItem from './TodoItem';
 
 const Todo = () => {
   const [inputText, setInputText] = useState('');
-  const [items, setItems] = useState([]);
+  const [todos, setTodos] = useState([]);
 
   const handleChange = (event) => {
     const { value } = event.target;
     setInputText(value);
   };
 
-  const handleClick = () => {
-    setItems((prevState) => {
+  const addItem = () => {
+    setTodos((prevState) => {
       return [...prevState, inputText];
     });
-    console.log(items);
     setInputText('');
   };
-
   return (
     <div>
       <div>
         <h1>To-Do List</h1>
       </div>
       <div>
-        <input type='text' onChange={handleChange} value={inputText} />
-        <button onClick={handleClick}>Add</button>
+        <input type='text' value={inputText} onChange={handleChange} />
+        <button onClick={addItem}>Add</button>
       </div>
       <div>
         <ul>
-          {items.map((item, i) => (
-            <li key={i}>{item}</li>
+          {todos.map((todo, i) => (
+            <TodoItem item={todo} key={i} />
           ))}
         </ul>
       </div>
