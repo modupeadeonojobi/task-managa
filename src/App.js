@@ -4,7 +4,8 @@ import { useState } from 'react';
 import AddTask from './components/AddTask';
 import Counter from './state/Counter';
 import Form from './state/Form';
-import Todo from './state/Todos/Todo';
+import Todo from './state/todos/Todo';
+import Keeper from './state/keeper/Keeper';
 
 function App() {
   const [tasks, setTasks] = useState([
@@ -48,6 +49,7 @@ function App() {
       <Counter />
       <Form />
       <Todo />
+      <Keeper />
     </div>
   );
 }
