@@ -10,8 +10,14 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+.wrapper {
+  display: flex;
+  /* flex-direction: ; */
+}
+
 .container {
-  max-width: 500px;
+  max-width: 550px;
+  width: 500px;
   margin: 30px auto;
   overflow: auto;
   min-height: 300px;

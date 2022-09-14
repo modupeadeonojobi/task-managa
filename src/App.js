@@ -38,18 +38,27 @@ function App() {
   const addTask = () => {};
 
   return (
-    <div className='container'>
-      {/* <Header title='Task Tracker' />
-      <AddTask onAdd={addTask} />
-      {tasks.length > 0 ? (
-        <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} />
-      ) : (
-        'No Task To Show.'
-      )} */}
-      <Counter />
-      <Form />
-      <Todo />
-      <Keeper />
+    <div className='wrapper'>
+      <div className='container'>
+        <Header title='Task Tracker' />
+        <AddTask onAdd={addTask} />
+        {tasks.length > 0 ? (
+          <Tasks
+            tasks={tasks}
+            onDelete={deleteTask}
+            onToggle={toggleReminder}
+          />
+        ) : (
+          'No Task To Show.'
+        )}
+      </div>
+      <div className='container'>
+        <h1>Other Mini App</h1>
+        <Counter />
+        <Form />
+        <Todo />
+        <Keeper />
+      </div>
     </div>
   );
 }
