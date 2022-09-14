@@ -16,6 +16,13 @@ const Todo = () => {
     });
     setInputText('');
   };
+
+  const deleteItem = (id) => {
+    setTodos((prevState) => {
+      return prevState.filter((item, i) => i !== id);
+    });
+  };
+
   return (
     <div>
       <div>
@@ -28,7 +35,7 @@ const Todo = () => {
       <div>
         <ul>
           {todos.map((todo, i) => (
-            <TodoItem item={todo} key={i} />
+            <TodoItem item={todo} key={i} id={i} onCheck={deleteItem} />
           ))}
         </ul>
       </div>

@@ -1,17 +1,8 @@
-import { useState } from 'react';
-
-const TodoItem = ({ item, key }) => {
-  const [isDone, setIsDone] = useState(false);
-
-  const handleClick = () => {
-    setIsDone((prevState) => !prevState); // Here, you're toggling the previous state
-  };
+const TodoItem = ({ item, id, onCheck }) => {
   return (
     <li
-      key={key}
-      onClick={handleClick}
+      onClick={() => onCheck(id)}
       style={{
-        textDecoration: isDone ? 'line-through' : 'none',
         cursor: 'pointer',
       }}
     >
